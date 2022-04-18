@@ -7,7 +7,7 @@
 	*/
 
     class Upa{
-        private $id;
+        private $id_upa;
         private $nome;
         private $descricao;
 
@@ -17,8 +17,8 @@
 
         //getters And setters;
         //getters
-        public function getId(){
-            return $this->id;
+        public function getId_Upa(){
+            return $this->id_upa;
         }
 
         public function getNome(){
@@ -27,6 +27,19 @@
 
         public function getDescricao(){
             return $this->descricao;
+        }
+
+        //setters
+        public function setId_Upa($id_upa){
+            $this->id_upa = $id_upa;
+        }
+
+        public function setNome($nome){
+            $this->nome = $nome;
+        }
+
+        public function setDescricao($descricao){
+            $this->descricao = $descricao;
         }
     }
 ?>
