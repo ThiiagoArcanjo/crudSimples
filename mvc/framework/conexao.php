@@ -4,9 +4,9 @@
     $senha = ""; // senha
     $bd= "bd_upaxbairrosxruas"; // nome do banco de dados
 
-    $mysqli = new mysqli($host, $usuario, $senha, $bd); //conexão
+    $conexao =  mysqli_connect($host, $usuario, $senha, $bd); //conexão
 
-    if($mysqli->connect_errno){
+    if($conexao->connect_errno){
         echo "Falha na conexão: (".$mysqli->connect_errno.") ".$mysqli->connect_error; // Codigo do erro e descrição do erro.
     }
 
