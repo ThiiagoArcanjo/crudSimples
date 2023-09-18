@@ -1,0 +1,22 @@
+version: "4.22.1"
+
+services:
+  testecrudcomphp:
+    build: .
+    image: php8
+    container_name: testecrudcomphp
+    restart: always
+    ports:
+      - "8081:80"
+    networks:
+      - thiago_network
+    volumes:
+      - /home/thiago/WorkSpace/php/crudSimples/html:/var/www/html/
+
+volumes:
+  html:
+  persistent:
+
+networks:
+  thiago_network:
+    external: true

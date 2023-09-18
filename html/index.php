@@ -1,4 +1,6 @@
-
+<?php 
+    include_once(__DIR__."/model/conexao.php");
+?>
 <!DOCTYPE html>
 <html lang="pt">
 <head>
