@@ -1,18 +1,14 @@
 <?php 
-    /*
-		Desenvolvido por: Thiago Arcanjo de Oliveira
-		Email:thiagokai.arcanjo@gmail.com
-		Data Ultima Att: 18/04/2022
-		Resumo: Objeto Upa;
-	*/
+    include_once("conexao.php");
 
     class Upa{
         private $id_upa;
         private $nome;
         private $descricao;
+        private $conexao;
 
         public function __construct(){
-            
+            $conexao = new Conexao();
         }
 
         //getters And setters;
@@ -40,6 +36,35 @@
 
         public function setDescricao($descricao){
             $this->descricao = $descricao;
+        }
+
+        /* CRUD */
+        public function cadastrar(){
+            $conexao = new Conexao();
+            $con = $conexao->conectar();
+            $stmt =  $con->prepare("INSERT INTO upa(nome, descricao) VALUES(:nome, :descricao)");
+
+            $stmt->bindParam(":nome", $this->nome);
+            $stmt->bindParam(":descricao", $this->descricao);
+
+            $stmt->execute();
+
+        }
+
+        public function alterar(){
+
+        }
+
+        public function excluir(){
+
+        }
+
+        public function buscarTodos(){
+
+        }
+
+        public function buscarPorId(){
+
         }
     }
 ?>

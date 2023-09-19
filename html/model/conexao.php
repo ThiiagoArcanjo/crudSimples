@@ -2,14 +2,24 @@
 
     include (__DIR__."/../config/config.php");
 
-    
-    $pdo = null;
+    class Conexao{
 
-    try {
-        $pdo = new PDO("mysql:host=".ENV["DB"]["HOST"].";dbname=".ENV["DB"]["NAME"], ENV["DB"]["USER"],  ENV["DB"]["PASS"]);
-    } catch (PDOException $e) {
-        print $e->getMessage();
-        die();
+        public function conectar(){
+            $pdo = null;
+
+            try {
+        
+                $pdo = new PDO("mysql:host=".ENV["DB"]["HOST"].";dbname=".ENV["DB"]["NAME"], ENV["DB"]["USER"],  ENV["DB"]["PASS"]);
+                $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                return $pdo;
+
+            } catch (PDOException $e) {
+                print $e->getMessage();
+                die();
+            
+            }
+        }
+
     }
 
 ?>

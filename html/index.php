@@ -13,7 +13,7 @@
         <div class="prinpal" align="center">
             <h2>Crud Simples Com PHP</h2>
             <div class="formulario">
-                <form action="mvc/controle/controleUpa.php" method="post" name="form">
+                <form action="controle/controleUpa.php" method="post" name="form">
                     <table class="table-cadastro">
                         <tr>
                             <td>Nome da UPA:</td>
